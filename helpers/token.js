@@ -12,7 +12,8 @@ const generate = (payload) => {
 };
 
 const verify = (token) => {
-  console.log(token);
+  const decoded = jwt.verify(token, SECRET);
+  return decoded;
 };
 
 module.exports = {
