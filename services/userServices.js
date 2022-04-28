@@ -1,11 +1,7 @@
 const { Users } = require('../models');
 const validateUser = require('../validates/validateUser');
+const getError = require('../helpers/getError');
 const jwtGenerate = require('../helpers/jwtGenerate');
-
-const getError = (status, message) => ({
-  status,
-  message,
-});
 
 const getEmail = async (email) => {
   const emailExists = await Users.findOne({ where: { email } });
