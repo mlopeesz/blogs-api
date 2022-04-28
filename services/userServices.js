@@ -20,6 +20,16 @@ const create = async (userData) => {
   return token;
 };
 
+const getAll = async () => {
+  const users = await Users.findAll(
+    {
+      attributes: { exclude: ['password'] },
+    },
+  );
+  return users;
+};
+
 module.exports = {
   create,
+  getAll,
 };
