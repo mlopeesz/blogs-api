@@ -1,7 +1,7 @@
 const { Users } = require('../models');
 const validateLogin = require('../validates/validateLogin');
 const getError = require('../helpers/getError');
-const jwtGenerate = require('../helpers/jwtGenerate');
+const jwt = require('../helpers/token');
 
 const getEmailPassword = async (data) => {
   const userExists = await Users.findOne({ where: 
@@ -16,7 +16,7 @@ const login = async (loginData) => {
 
   if (await getEmailPassword(loginData)) {
     const { id } = await getEmailPassword(loginData);
-    const token = jwtGenerate({ id });
+    const token = jwt.generate({ id });
     return token;
   }
 

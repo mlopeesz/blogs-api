@@ -3,7 +3,7 @@ require('dotenv').config();
 
 const SECRET = process.env.JWT_SECRET;
 
-const generateToken = (payload) => {
+const generate = (payload) => {
   const jwtConfig = {
     expiresIn: '7d',
   };
@@ -11,4 +11,11 @@ const generateToken = (payload) => {
   return token;
 };
 
-module.exports = generateToken;
+const verify = (token) => {
+  console.log(token);
+};
+
+module.exports = {
+  generate,
+  verify,
+};

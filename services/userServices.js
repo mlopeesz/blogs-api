@@ -1,7 +1,7 @@
 const { Users } = require('../models');
 const validateUser = require('../validates/validateUser');
 const getError = require('../helpers/getError');
-const jwtGenerate = require('../helpers/jwtGenerate');
+const jwt = require('../helpers/token');
 
 const getEmail = async (email) => {
   const emailExists = await Users.findOne({ where: { email } });
@@ -15,7 +15,7 @@ const create = async (userData) => {
   if (await getEmail(userData.email)) throw getError(409, 'User already registered');
 
   const { id } = await Users.create(userData);
-  const token = jwtGenerate({ id });
+  const token = jwt.generate({ id });
   
   return token;
 };
