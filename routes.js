@@ -21,5 +21,6 @@ router.get('/categories', verifyAuth, categoriesController.getAll);
 
 // Post
 router.post('/post', verifyAuth, postController.create);
+router.get('/post', verifyAuth, postController.getAll);
 
 module.exports = router;
