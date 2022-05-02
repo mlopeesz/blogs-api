@@ -1,4 +1,4 @@
-const { Categories } = require('../models/Categories');
+const { Categories } = require('../models');
 const validateCategories = require('../validates/validateCategories');
 const getError = require('../helpers/getError');
 
@@ -13,6 +13,12 @@ const create = async (data) => {
   return createdCategory;
 };
 
+const getAll = async () => {
+  const categories = await Categories.findAll();
+  return categories;
+};
+
 module.exports = {
   create,
+  getAll,
 };
