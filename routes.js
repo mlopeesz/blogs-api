@@ -2,6 +2,7 @@ const express = require('express');
 const userController = require('./controllers/userController');
 const loginController = require('./controllers/loginController');
 const categoriesController = require('./controllers/categoriesController');
+const postController = require('./controllers/postController');
 const verifyAuth = require('./middlewares/verifyAuth');
 
 const router = express.Router();
@@ -17,5 +18,8 @@ router.post('/login', loginController.login);
 // Categories
 router.post('/categories', verifyAuth, categoriesController.create);
 router.get('/categories', verifyAuth, categoriesController.getAll);
+
+// Post
+router.post('/post', verifyAuth, postController.create);
 
 module.exports = router;
