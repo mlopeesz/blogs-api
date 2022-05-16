@@ -1,5 +1,4 @@
-# Store Manager
-
+# Blogs API
 Blogs API é uma API CRUD de posts de blog com ORM. Começando pela API, foi desenvolvido alguns endpoints que estarão conectados ao banco de dados e possuem autenticação e autorização de usuário.
 
 No banco de dados temos entidades variadas como Usuários, Categorias, Posts e relações diversas entre elas.
