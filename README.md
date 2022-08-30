@@ -17,4 +17,4 @@ No banco de dados temos entidades variadas como Usuários, Categorias, Posts e r
 
 ---
 ## Instalação
-Para testar a aplicação basta clonar o repositório e instalar as dependências com o ```npm install``` e executar o script ```npm start``` para subir a API. Não esqueça de configurar suas variáveis de ambiente no arquivo ```.env```.
+Para testar a aplicação basta clonar o repositório e instalar as dependências com o ```npm install``` e executar o script ```npm run dev``` para subir a API. Não esqueça de configurar suas variáveis de ambiente no arquivo ```.env```.
